@@ -68,7 +68,7 @@ monitor.sh file runs as administrator
 **Notes:**
   A System Administrator has to monitor the servers, users, logs, create backup.. For the most repetitive task most of the administrator write a script like monitor.sh to automate their day-to-day repetitive task.
   
-## 2.nel Exploit
+## 2.Kernel Exploit
 Additionally, this box is vulnerable to a kernel exploit. This monitor.sh file script showed OS Vesion 16.04.3.
 
   
