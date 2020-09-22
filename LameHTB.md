@@ -10,7 +10,7 @@
 
 ## 1.Enumerating FTP
 
-vulnerable vsftpd 2.3.4, anonymous login allowed
+vulnerable _vsftpd 2.3.4_ , anonymous login allowed
 According to nmap script the ftp service is not vulnerable so the version would possibly be a banner.
 However, we will try metasploit in order to exploit this vulnerability.
 
