@@ -48,8 +48,10 @@ Backup location : /var/www/backup/
 
 
 **SIP** is an application-layer control protocol that can establish, modify, and terminate multimedia sessions (conferences) such as Internet telephony calls. SIP can also invite participants to already existing sessions, such as multicast conferences.
+
 **SIP** employs design elements similar to the HTTP request/response transaction model. Each transaction consists of a client request that invokes a particular method or function on the server and at least one response. SIP reuses most of the header fields, encoding rules and status codes of HTTP, providing a readable text-based format.
 Each resource of a SIP network, such as a user agent or a voicemail box, is identified by a URI, based on the general standard syntax also used in Web services and e-mail. The URI scheme used for SIP is sip: and a typical SIP URI is of the form: sip:username:password@host:port
+
 **SIP** clients typically use TCP or UDP on port numbers 5060 and/or 5061 to connect to SIP servers and other SIP endpoints. Port 5060 is commonly used for non-encrypted signaling traffic whereas port 5061 is typically used for traffic encrypted with TLS. SIP is primarily used in setting up and tearing down voice or video calls.
 And, a little about Asterisk and FreePBX:
 Asterisk is a software implementation of a telephone private branch exchange (PBX). Like any PBX, it allows attached telephones to make calls to one another, and to connect to other telephone services, such as the public switched telephone network (PSTN) and Voice over Internet Protocol (VoIP) services.
@@ -59,10 +61,15 @@ An IP PBX ("Internet Protocol private branch exchange") is a system that connect
 I found an awesome tool suite **SIPVicious**
 
 **SIPVicious suite** is a set of tools that can be used to audit SIP based VoIP systems. It currently consists of the folowing tools:
+
 **svmap** – this is a sip scanner. Lists SIP devices found on an IP range
+
 **svwar** – identifies active extensions on a PBX
+
 **svcrack** – an online password cracker for SIP PBX
+
 **svreport** – manages sessions and exports reports to various formats
+
 **svcrash** – attempts to stop unauthorized svwar and svcrack scans
 
 ![b5](https://user-images.githubusercontent.com/15195048/93913796-711c0600-fcba-11ea-819e-56d97a0f2e0f.png)
