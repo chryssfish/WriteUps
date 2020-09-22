@@ -32,10 +32,13 @@ Visit the URL to port 80 redirects us to port 443 (https) with a login form of E
 
 **Notes:**
 
-1. Asterisk is the software that allows you to have to functionality of a pbx with a pc or a server. It does not have a graphical interface and most of the configuration is do editing text files. There are several web interfases for Asterisk and the most popular is freePBX.
-2. Elastix includes freepbx, Asterisk and our modules to administrate Asterisk. We also include other software use for email, chat, fax, etc... that can be use together with Asterisk.
-3. With elastix you can have the pbx ready to configure 20 minutes after the installation.
-4. Anything that runs Linux would be a good place to run Asterisk. Of course it depends how many concurrents calls you are going to have.
+**1.** Asterisk is the software that allows you to have to functionality of a pbx with a pc or a server. It does not have a graphical interface and most of the configuration is do editing text files. There are several web interfases for Asterisk and the most popular is freePBX.
+
+**2.** Elastix includes freepbx, Asterisk and our modules to administrate Asterisk. We also include other software use for email, chat, fax, etc... that can be use together with Asterisk.
+
+**3.** With elastix you can have the pbx ready to configure 20 minutes after the installation.
+
+**4.** Anything that runs Linux would be a good place to run Asterisk. Of course it depends how many concurrents calls you are going to have.
 
 **Interesting files**
 In elastix version 1.4
