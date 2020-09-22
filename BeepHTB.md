@@ -218,7 +218,7 @@ https://10.10.10.7/vtigercrm/
 ![b11](https://user-images.githubusercontent.com/15195048/93913805-737e6000-fcba-11ea-9076-b865abd26132.png)
 
 
-**searchsploi vtiger CRM 5.1.0**
+**searchsploit vtiger CRM 5.1.0**
 
 ![b12](https://user-images.githubusercontent.com/15195048/93913806-7416f680-fcba-11ea-8781-05c8addb5d55.png)
 
