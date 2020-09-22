@@ -2,23 +2,27 @@
 
 # Initial Enumeration
 
-*1.nmap -sC -sV 10.10.10.76*
+**1.nmap -sC -sV 10.10.10.76**
 
+![sunday1](https://user-images.githubusercontent.com/15195048/93906871-8fc9cf00-fcb1-11ea-9eb0-7640d87254b3.png)
 
-*2. ./nmapAutomator.sh 10.10.10.76 Full*
+**2. ./nmapAutomator.sh 10.10.10.76 Full**
 
+![sunday2](https://user-images.githubusercontent.com/15195048/93906876-90fafc00-fcb1-11ea-9e94-2e2be9c0d159.png)
 
-Nmap full port scan: nmap -p- -oA full-noscripts 10.10.10.76  --max-retries 0
+**Nmap full port scan:** 
+
+**nmap -p- -oA full-noscripts 10.10.10.76  --max-retries 0**
 79/tcp    open  finger
 111/tcp   open  rpcbind
 22022/tcp open  unknown
 55029/tcp open  unknown
 
 Running a specific port scan:
-nmap -p 79,111,22022,55029 -sV -oA full-scripts 10.10.10.7
+**nmap -p 79,111,22022,55029 -sV -oA full-scripts 10.10.10.7**
 
 Results:
-Port 22022: is running SunSSH 1.3
+Port 22022: is running **SunSSH 1.3**
 Port 55029: is running a service that nmap was not able to identify
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -29,9 +33,12 @@ Port 55029: is running a service that nmap was not able to identify
 
 finger @10.10.10.76
 
+![sunday3](https://user-images.githubusercontent.com/15195048/93906879-91939280-fcb1-11ea-9b88-6dcd9538d0dd.png)
 
-perl finger-user-enum.pl -U user.txt -t 10.10.10.76
+**perl finger-user-enum.pl -U user.txt -t 10.10.10.76**
                                                      
+![sunday4](https://user-images.githubusercontent.com/15195048/93906880-91939280-fcb1-11ea-833a-f870f54e68ad.png)
+![sunday5](https://user-images.githubusercontent.com/15195048/93906882-922c2900-fcb1-11ea-948a-2ae941037bfd.png)
 
 
 2. Port 22
