@@ -8,8 +8,9 @@
 
 **2. Dirbuster/ Gobuster**
 
-gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u 10.10.10.75/nibbleblog
-dirb http://10.10.10.75/nibbleblog -X .php,.bit,.html,.sh
+**gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u 10.10.10.75/nibbleblog**
+
+**dirb http://10.10.10.75/nibbleblog -X .php,.bit,.html,.sh**
 
 ![ni2](https://user-images.githubusercontent.com/15195048/93920481-19829800-fcc4-11ea-91f1-497e9b80909e.png)
 
