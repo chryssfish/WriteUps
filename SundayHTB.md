@@ -1,11 +1,11 @@
-Sunday HTB, IP address:10.10.10.76
+# Sunday HTB, IP address:10.10.10.76
 
-#Initial Enumeration
+# Initial Enumeration
 
-1.nmap -sC -sV 10.10.10.76
+*1.nmap -sC -sV 10.10.10.76*
 
 
-2. ./nmapAutomator.sh 10.10.10.76 Full
+*2. ./nmapAutomator.sh 10.10.10.76 Full*
 
 
 Nmap full port scan: nmap -p- -oA full-noscripts 10.10.10.76  --max-retries 0
