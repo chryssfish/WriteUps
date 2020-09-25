@@ -326,11 +326,13 @@ To confirm that the target machine is vulnerable to **Dirty COW** we run Linux E
 With these information, we can search for an existing exploit in order to escalate our privileges to root.
 Link:https://www.exploit-db.com/exploits/40839
 
-Notes:
+**Notes:**
+
 As an overview, the DirtyCOW vulnerability is a race condition in the Linux kernel’s memory subsystem which handles the copy-on-write breakage of private read-only memory mappings. By exploiting this vulnerability, an unprivileged local user could use this flaw to gain write access to otherwise read-only memory mappings, thus increasing their privileges on the system.
 
-Compile & execute **40839.c**
-For the particular implementation of DirtyCow exploit we used, it automatically generates a new passwd file containing a new user “firefart” which overwrites the root account. After running the exploit we should be able to login with the newly created user with a password that we specify on a prompt. The original /etc/passwd file is then backed up to /tmp/passwd.bak.
+**Compile & execute **40839.c**
+
+For the particular implementation of **DirtyCow exploit** we used, it automatically generates a new passwd file containing a new user “firefart” which overwrites the root account. After running the exploit we should be able to login with the newly created user with a password that we specify on a prompt. The original /etc/passwd file is then backed up to /tmp/passwd.bak.
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -360,10 +362,12 @@ uid=0(firefart) gid=0(root) groups=0(root)
 **Rooted**
 
 # Privilege Escalation no2
+
 There is an active tmux session that is owned by root.
 It is basically a shell that is owned by root. So If we can enter this active tmux session, any command we wun will be executed as root.
 
 **Manually find tmux process**
+
 cat .bash_history
 or 
 ps -aux
