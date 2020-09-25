@@ -97,7 +97,8 @@ system-users.txt
 
 
 According to the ticket, there is an account with username Rohit and default password.
-Credentials rohit:pfsense
+
+**Credentials rohit:pfsense**
 
 ![se13](https://user-images.githubusercontent.com/15195048/94268637-503df580-fef2-11ea-857c-ecb001349ad8.png)
 
