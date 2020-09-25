@@ -1,6 +1,6 @@
 # Valentine HTB, IP 10.10.10.79
 
-#I nitial Enumeration
+# Initial Enumeration
 
 **1. nmap -sC -sV 10.10.10.79**
 
