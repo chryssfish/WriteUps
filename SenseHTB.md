@@ -11,6 +11,7 @@
  cpe:/a:lighttpd:lighttpd:1.4.35: 
 
 CVE-2018-19052  5.0     https://vulners.com/cve/CVE-2018-19052
+
 CVE-2018-19052  5.0     https://vulners.com/cve/CVE-2018-19052
 
 **3. Dirb/Gobuster Enumeration**
