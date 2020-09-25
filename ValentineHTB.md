@@ -9,6 +9,7 @@
 
 **2. ./nmapAutomator.sh 10.10.10.79 All**
 
+
 **ssl-css-injection**
 
 ![v2](https://user-images.githubusercontent.com/15195048/94270359-c6435c00-fef4-11ea-8f88-cbac237a3085.png)
@@ -29,6 +30,7 @@ The NMAP scan and enum scripts have three vulnerabilities discovered. Out of all
 **3.SSLyze tool**
 
 **sslyze 10.10.10.79**
+
 ![v5](https://user-images.githubusercontent.com/15195048/94270365-c7748900-fef4-11ea-9980-cb50883aa3e5.png)
 
 
