@@ -1,22 +1,26 @@
 Linux Vms HTB
-Lame
-Sunday
-Networked
-Beep
-Nibbles
-Bashed
-Shocker
-Friendzone
-Sense
-Valentine
-Swagshop
-Irked
-La casa d papel
+Lame  ✔
+Sunday ✔
+Networked ✔
+Beep ✔
+Nibbles ✔
+Bashed ✔
+Shocker ✔
+Friendzone ✔
+Sense ✔
+Valentine ✔
+Swagshop ✔
+Irked✔
+Mirai ✔
+OpenAdmin ✔
+Travexerc ✔
+La casa de papel
 Devops
-Poison
+Poison ✔
+Mango ✔
 Niveneh
 Node
-Cronos
+Cronos ✔
 Solidstate
 Kotavak
 Tartasauce
@@ -26,6 +30,12 @@ Falafel
 Lightweighht
 Jail
 Brainfuck
+Other
+Heist ✔
+Remote ✔
+Magic ✔
+Cache ✔
+Traceback ✔
 #####################################################################################################
 Windows Vms
 
