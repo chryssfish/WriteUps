@@ -30,15 +30,40 @@ Falafel
 Lightweighht
 Jail
 Brainfuck
-Other
+
+Other:
+Haystack ✔
 Heist ✔
 Remote ✔
 Magic ✔
 Cache ✔
 Traceback ✔
+
+Other openBSD
+Ypuffy ✔
+
 #####################################################################################################
 Windows Vms
-
+legacy
+Blue
+Devel
+Optimum ✔
+Bastard 
+granny
+Arctic
+grandpa
+silo
+bounty
+jerry ✔
+conceal
+chatterbox
+Forest ✔
+BankRobber
+secnotes
+Bastion
+Buff
+Servmon
+Active 
 #####################################################################################################
 VulnHub machines:
 Kioptrix: Level 1 (#1): https://www.vulnhub.com/entry/kioptrix-level-1-1,22/ ✔
