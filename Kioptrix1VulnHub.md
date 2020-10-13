@@ -8,7 +8,7 @@
 
 **nmap -sC -sV 192.168.1.10**
 
-![kio2]https://user-images.githubusercontent.com/15195048/95851965-4c63fd00-0d53-11eb-9b2a-855be54df5ba.png
+![kio2](https://user-images.githubusercontent.com/15195048/95851965-4c63fd00-0d53-11eb-9b2a-855be54df5ba.png)
 
 ## 1. Exploiting Apache 
 
