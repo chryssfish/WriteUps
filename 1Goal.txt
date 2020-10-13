@@ -44,9 +44,9 @@ Ypuffy ✔
 
 #####################################################################################################
 Windows Vms
-legacy
-Blue
-Devel
+legacy✔
+Blue✔
+Devel✔
 Optimum ✔
 Bastard 
 granny
