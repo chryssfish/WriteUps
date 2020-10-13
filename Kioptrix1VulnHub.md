@@ -79,7 +79,6 @@ https://github.com/amitn322/smb-version/blob/master/samba_version.py
 
 ![kio7](https://user-images.githubusercontent.com/15195048/95851978-4ec65700-0d53-11eb-8007-ac8f11e13e5f.png)
 
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 gcc 10.c
 ./a.out -b -o 192.168.1.10
