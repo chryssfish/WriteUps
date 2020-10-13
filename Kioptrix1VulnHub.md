@@ -14,7 +14,9 @@
 
 OpenSSH 2.9p2 (protocol 1.99)
 Http mod_ssl/2.8.4
+
 This module provides SSL v2/v3 and TLS v1 support for the Apache HTTP Server. 
+
 Exploits: Apache mod_ssl < 2.8.7 OpenSSL - 'OpenFuckV2.c' Remote Buffer Overflow 
 
 **searchsploit mod_ssl**
@@ -49,29 +51,30 @@ error
 
 ## 2. Samba Exploit
 
-** 1.enum4linux -a 192.168.1.10
+**1.enum4linux -a 192.168.1.10**
 
-2.smbclient 192.168.1.10 or smbclient -N -L \\192.168.1.10\\
+**2.smbclient 192.168.1.10 or smbclient -N -L \\192.168.1.10\\**
 
-3.nmap -p 139 --script=smb-vuln* 192.168.1.10
+**3.nmap -p 139 --script=smb-vuln* 192.168.1.10**
 
-4.smbmap -P 139 -H 192.168.1.10 **
+**4.smbmap -P 139 -H 192.168.1.10**
 
-5.samba_version.py Github
+**5.samba_version.py Github**
+
 https://github.com/amitn322/smb-version/blob/master/samba_version.py
-python smb-version/samba_version.py -s 192.168.1.10
+
+**python smb-version/samba_version.py -s 192.168.1.10**
 
 ![kio5](https://user-images.githubusercontent.com/15195048/95851970-4d952a00-0d53-11eb-9d2a-27844dc33287.png)
 
-
-Samba2.2
+**Version: Samba2.2**
 ** searchsploit samba 2.2 **
 
 ![kio6](https://user-images.githubusercontent.com/15195048/95851974-4e2dc080-0d53-11eb-9467-a88125c91e68.png)
 
 
 
-Samba < 2.2.8 (Linux/BSD) - Remote Code Execution
+**Samba < 2.2.8 (Linux/BSD) - Remote Code Execution**
 
 
 ![kio7](https://user-images.githubusercontent.com/15195048/95851978-4ec65700-0d53-11eb-8007-ac8f11e13e5f.png)
@@ -85,4 +88,4 @@ gcc 10.c
 ![kio8](https://user-images.githubusercontent.com/15195048/95851983-4ec65700-0d53-11eb-98ea-370a424c4437.png)
 
 
-Rooted
+**Rooted**
