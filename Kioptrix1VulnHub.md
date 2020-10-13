@@ -2,7 +2,7 @@
 
 **netdiscover -i eth0**
 
-![kio1](https://user-images.githubusercontent.com/15195048/95851963-4b32d000-0d53-11eb-801a-7851796a3b23.png)
+![kio1](https://user-images.githubusercontent.com/15195048/95853632-08262c00-0d56-11eb-98fe-073611eb2e6b.png)
 
 **IP 192.168.1.10**
 
