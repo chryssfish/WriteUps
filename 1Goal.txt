@@ -64,7 +64,7 @@ Bastion
 Buff
 Servmon
 Active ✔
-Fuse ✔
+Fuse 
 #####################################################################################################
 VulnHub machines:
 Kioptrix: Level 1 (#1): https://www.vulnhub.com/entry/kioptrix-level-1-1,22/ ✔
